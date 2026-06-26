@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 여름방학 수학 특강 – 플러스수학학원</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1a2d4e;--blue:#2563a8;--sky:#e8f1fb;--red:#c0392b;
+  --gold:#f0a500;--green:#2e7d52;--light:#f5f7fa;--border:#d0d9e8;
+  --text:#1e2a3a;--muted:#5a6a7e;
+}
+@media print{
+  @page{size:A4 portrait;margin:8mm 10mm}
+  body{width:210mm!important;max-width:none!important;padding:0!important;
+       font-size:8pt!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .elem-grid{grid-template-columns:repeat(5,1fr)!important;gap:4px!important}
+  .mid-grid{grid-template-columns:repeat(2,1fr)!important;gap:4px!important}
+  .name{font-size:8pt!important}.fee{font-size:7pt!important}
+  .info-text,.item{font-size:7pt!important}
+  .intro-box{font-size:7.5pt!important}.notice{font-size:6.5pt!important}
+  .title-banner h1{font-size:13pt!important}
+}
+body{
+  font-family:'Noto Sans KR',sans-serif;background:#fff;color:var(--text);
+  max-width:800px;margin:0 auto;padding:20px 16px 28px;
+  font-size:15px;line-height:1.55;
+}
+.header{display:flex;align-items:center;justify-content:space-between;
+  border-bottom:2.5px solid var(--navy);padding-bottom:8px;margin-bottom:12px}
+.acad-name{font-size:20px;font-weight:900;color:var(--blue)}
+.acad-sub{font-size:12px;color:var(--muted);margin-top:2px}
+.tel{font-size:15px;font-weight:700;color:var(--navy)}
+.title-banner{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);
+  color:#fff;border-radius:10px;padding:14px 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin-bottom:14px;
+}
+.title-banner h1{font-size:22px;font-weight:900;letter-spacing:-.5px}
+.title-banner h1 span{color:var(--gold)}
+.banner-sub{font-size:13px;opacity:.88;margin-top:3px}
+.badge{background:var(--gold);color:var(--navy);font-weight:900;font-size:13px;
+  padding:6px 14px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.intro-box{
+  background:var(--sky);border-left:3px solid var(--blue);
+  border-radius:0 6px 6px 0;padding:11px 15px;font-size:14px;
+  color:var(--navy);margin-bottom:16px;line-height:1.75;
+}
+.intro-box strong{color:var(--blue)}
+.sec-label{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.pill{font-size:14px;font-weight:700;padding:5px 16px;border-radius:20px;color:#fff;white-space:nowrap}
+.pill-e{background:var(--blue)}.pill-m{background:var(--green)}
+.sec-line{flex:1;height:1.5px;opacity:.2}
+.sec-line-e{background:var(--blue)}.sec-line-m{background:var(--green)}
+.elem-grid,.mid-grid{display:grid;gap:10px;margin-bottom:16px}
+.elem-grid{grid-template-columns:repeat(3,1fr)}
+.mid-grid{grid-template-columns:repeat(2,1fr)}
+.card{border:1.2px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.card-head{padding:11px 13px 9px;text-align:center;color:#fff}
+.name{font-size:15px;font-weight:700;line-height:1.35}
+.fee{font-size:12px;margin-top:4px;opacity:.92}
+.rl{color:#ffe0dd}
+.c1 .card-head{background:#1e5fa8}.c2 .card-head{background:#2a7abf}
+.c3 .card-head{background:#2e86c1}.c4 .card-head{background:#e84e3a}
+.c5 .card-head{background:#c0392b}.m1 .card-head{background:#1e6648}
+.m2 .card-head{background:#1a5c3e}
+.card-body{padding:11px 13px;flex:1;background:#fff}
+.info-row{display:flex;align-items:flex-start;gap:5px;margin-bottom:6px}
+.info-ico{font-size:13px;width:19px;text-align:center;flex-shrink:0;padding-top:1px}
+.info-text{font-size:12.5px;color:var(--muted);line-height:1.5}
+.divider{border:none;border-top:1px dashed var(--border);margin:9px 0}
+.items{list-style:none;display:flex;flex-direction:column;gap:5px}
+.item{font-size:13px;color:var(--text);line-height:1.5;padding-left:13px;position:relative}
+.item::before{content:'–';position:absolute;left:0;color:var(--muted)}
+.item.hl{font-weight:700}
+.c1 .item.hl,.c2 .item.hl,.c3 .item.hl{color:var(--blue)}
+.c4 .item.hl,.c5 .item.hl{color:var(--red)}
+.m1 .item.hl,.m2 .item.hl{color:var(--green)}
+.notice{background:var(--light);border:1px solid var(--border);border-radius:6px;
+  padding:10px 15px;font-size:12.5px;color:var(--muted);line-height:1.75}
+.notice strong{color:var(--navy)}
+
+@media screen and (max-width:480px){
+  body{padding:14px 12px 24px;font-size:15px}
+  .acad-name{font-size:18px}.acad-sub{font-size:12px}.tel{font-size:14px}
+  .title-banner{flex-direction:column;align-items:flex-start;gap:10px;padding:14px 16px}
+  .title-banner h1{font-size:20px}.banner-sub{font-size:13px}
+  .badge{font-size:13px;padding:6px 13px}
+  .intro-box{font-size:13.5px;padding:11px 14px}
+  .pill{font-size:14px;padding:5px 15px}
+  .elem-grid,.mid-grid{grid-template-columns:1fr;gap:10px}
+  .card-head{padding:13px 15px 11px}.name{font-size:16px}.fee{font-size:13px}
+  .card-body{padding:13px 15px}
+  .info-ico{font-size:14px;width:21px}.info-text{font-size:13.5px}
+  .info-row{margin-bottom:7px}.divider{margin:10px 0}
+  .items{gap:7px}.item{font-size:14px;padding-left:15px}
+  .notice{font-size:13px;padding:11px 15px}
+}
+@media screen and (min-width:481px) and (max-width:680px){
+  .elem-grid{grid-template-columns:repeat(2,1fr)}
+  .mid-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="acad-name">플러스수학학원</div>
+    <div class="acad-sub">초·중등 수학 전문 | 이문동</div>
+  </div>
+  <div class="tel">📞 02-960-0369</div>
+</div>
+
+<div class="title-banner">
+  <div>
+    <h1>2026 <span>여름방학</span> 수학 특강 안내</h1>
+    <div class="banner-sub">수학 실력 향상을 위한 특강 프로그램 (8월)</div>
+  </div>
+  <div class="badge">📅 8월 집중 운영</div>
+</div>
+
+<div class="intro-box">
+  이번 여름방학은 부족한 부분을 보완하고, 다음 학기를 앞서 준비할 수 있는 <strong>가장 중요한 학습 시기</strong>입니다.<br>
+  플러스수학학원에서는 학생의 학습 수준에 맞춘 <strong>맞춤형 여름방학 특강</strong>을 운영합니다.
+  &nbsp;<br>(※ 학생의 현재 학습 수준에 따라 특강 프로그램을 추천해 드립니다. 상담 후 신청 가능합니다.)
+</div>
+
+<div class="sec-label">
+  <div class="pill pill-e">① 초등 특강</div>
+  <div class="sec-line sec-line-e"></div>
+</div>
+
+<div class="elem-grid">
+
+  <div class="card c1">
+    <div class="card-head">
+      <div class="name rl">레드케어 복습 특강</div>
+      <div class="fee">수강료 14만원 · 2주 10회</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <span class="info-ico">📅</span>
+        <span class="info-text">8/3(월) ~ 8/14(금)<br>매일 1:00~2:00 (60분)</span>
+      </div>
+      <hr class="divider">
+      <ul class="items">
+        <li class="item">학년별 취약 단원 집중 복습</li>
+        <li class="item">다음 학년을 위한 핵심 개념 완성</li>
+        <li class="item hl">나만의 오답 노트 정리</li>
+        <li class="item">유형별 문제 풀이 · 개별 피드백</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card c2">
+    <div class="card-head">
+      <div class="name">예습 특강</div>
+      <div class="fee">수강료 14만원 · 2주 10회</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <span class="info-ico">📅</span>
+        <span class="info-text">8/3(월) ~ 8/14(금)<br>매일 2:00~3:00 (60분)</span>
+      </div>
+      <hr class="divider">
+      <ul class="items">
+        <li class="item">현재 학년 학습을 마친 학생 대상</li>
+        <li class="item hl">다음 학기 핵심 개념 예습</li>
+        <li class="item">개별 이해도 확인 및 보완</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card c3">
+    <div class="card-head">
+      <div class="name">더블 특강 (복습+예습)<br></div>
+      <div class="fee">수강료 26만원 · 2주 10회</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <span class="info-ico">📅</span>
+        <span class="info-text">8/3(월) ~ 8/14(금)<br>매일 1:00~3:00 (120분)</span>
+      </div>
+      <hr class="divider">
+      <ul class="items">
+        <li class="item hl">1학기 핵심 총정리 + 2학기 예습</li>
+        <li class="item">복습과 예습을 한 번에</li>
+        <li class="item">핵심 유형 집중 훈련</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card c4">
+    <div class="card-head">
+      <div class="name">서술형 특강</div>
+      <div class="fee">수강료 16만원 · 2주 6회</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <span class="info-ico">📅</span>
+        <span class="info-text">8/3(월) ~ 8/14(금)<br>월수금 5:00~7:00 (120분)</span>
+      </div>
+      <hr class="divider">
+      <ul class="items">
+        <li class="item">풀이 과정 작성법 집중 연습</li>
+        <li class="item hl">논리적 서술형 답안 작성 훈련</li>
+        <li class="item">개별 첨삭 및 피드백</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card c5">
+    <div class="card-head">
+      <div class="name">예비중 특강</div>
+      <div class="fee">수강료 14만원 · 2주 10회</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <span class="info-ico">📅</span>
+        <span class="info-text">8/3(월) ~ 8/14(금)<br>매일 1:00~2:00 (60분)</span>
+      </div>
+
+      <hr class="divider">
+      <ul class="items">
+      <div class="info-row">
+        <span class="info-ico">👤</span>
+        <span class="info-text">초등 5·6학년 대상</span>
+      </div>
+        <li class="item">중1 수학 기초 핵심 개념 학습</li>
+        <li class="item hl">소인수분해, 최대공약수·최소공배수, 정수·유리수</li>
+        <li class="item">초등과 중등을 잇는 필수 개념 완성</li>
+        <li class="item">중학교 수학 자신 있게 시작</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="sec-label">
+  <div class="pill pill-m">② 중등 특강</div>
+  <div class="sec-line sec-line-m"></div>
+</div>
+
+<div class="mid-grid">
+
+  <div class="card m1">
+    <div class="card-head">
+      <div class="name">중고등 예습 특강</div>
+      <div class="fee">수강료 16만원 · 2주 6회</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <span class="info-ico">📅</span>
+        <span class="info-text">8/3(월) ~ 8/14(금) <br>월수금 2:00~4:00 (120분, 총 6회)</span>
+      </div>
+      <hr class="divider">
+      <ul class="items">
+        <li class="item">현재 학년 학습을 마친 학생 대상</li>
+        <li class="item hl">다음 학기 핵심 개념 예습</li>
+        <li class="item">개별 맞춤 학습관리</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card m2">
+    <div class="card-head">
+      <div class="name">취약 단원 특강</div>
+      <div class="fee">수강료 16만원 · 2주 6회</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <span class="info-ico">📅</span>
+        <span class="info-text">8/3(월) ~ 8/14(금) <br>월수금 3:00~5:00 (120분, 총 6회)</span>
+      </div>
+      <hr class="divider">
+      <ul class="items">
+        <li class="item">학생별 진단 결과 기반 맞춤 학습</li>
+        <li class="item hl">취약 단원 집중 보완</li>
+        <li class="item">오답노트 활용 반복 학습</li>
+        <li class="item">유형별 문제 적용 훈련</li>
+        <li class="item">다음 학년 기초 실력 완성</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="notice">
+  <strong>※ 안내사항</strong>&nbsp; <br>특강 일정은 신청 인원에 따라 일부 조정될 수 있으며, 동일 수준 학생과 통합 운영될 수 있습니다.
+  <br>학생의 학습 수준에 따라 적합한 프로그램을 추천해 드립니다. &nbsp;|&nbsp; 문의: <strong>02-960-0369</strong>
+</div>
+
+</body>
+</html>
